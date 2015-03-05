@@ -1,7 +1,7 @@
 cpu strategy
 ------------
 
-Script bash permettant d'administrer la stratégie d'utilisation du cpu
+Script bash permettant d'administrer la stratégie d'utilisation des cpu
 
 Installation des dépendances
 
@@ -11,6 +11,6 @@ Voir la stratégie actuelle et les stratégies disponibles
 
 > bash cpu_strategy.sh
 
-Changer la stratégie du cpu
+Changer la stratégie des cpu (change uniquement les 2 premiers cpu : à adapter pour rendre générique en fonction du nombre de cpu de l'ordi)
 
 > bash cpu_strategy.sh performance
