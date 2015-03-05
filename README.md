@@ -11,6 +11,6 @@ Voir la stratégie actuelle et les stratégies disponibles
 
 > bash cpu_strategy.sh
 
-Changer la stratégie des cpu (change uniquement les 2 premiers cpu : à adapter pour rendre générique en fonction du nombre de cpu de l'ordi)
+Changer la stratégie des cpu
 
 > bash cpu_strategy.sh performance
