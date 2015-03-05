@@ -11,6 +11,6 @@ Voir la stratégie actuelle et les stratégies disponibles
 
 > bash cpu_strategy.sh
 
-Changer les stratégie du cpu
+Changer la stratégie du cpu
 
 > bash cpu_strategy.sh performance
