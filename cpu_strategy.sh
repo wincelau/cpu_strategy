@@ -1,11 +1,18 @@
 STRATEGY=$1
 
+NB_CPU=$(cpufreq-info  | grep "analyse du CPU" | wc -l)
+
 if ! test "$STRATEGY"; then
    echo 
    echo "=== Stratégie actuelle ==="
    echo
-   cpufreq-info -c 0 -p
-   cpufreq-info -c 1 -p
+
+   for (( i=0; i<$NB_CPU; i++ ))
+   do
+      echo -n "CPU $i : "
+      cpufreq-info -c $i -p
+   done
+   
    echo
    echo "=== Stratégies disponibles ==="
    echo 
@@ -18,8 +25,9 @@ if ! test "$STRATEGY"; then
    exit;
 fi
 
-
-sudo cpufreq-set -c 0 -g $STRATEGY
-sudo cpufreq-set -c 1 -g $STRATEGY
-cpufreq-info -c 0 -p
-cpufreq-info -c 1 -p
+for (( i=0; i<$NB_CPU; i++ ))
+do
+   sudo cpufreq-set -c $i -g $STRATEGY
+   echo -n "CPU $i : "
+   cpufreq-info -c $i -p
+done
